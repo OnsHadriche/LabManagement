@@ -13,21 +13,23 @@ import { Article } from 'src/Modeles/Article';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = ['1', '2', '3', '4', '5'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private AS: ArticleService, private dialog: MatDialog) {}
-  tabArticles:Article[]=[]
-  ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<any>(this.AS.tab1);
-    this.dataSource.paginator = this.paginator;
-  }
-  getAllData() {
-    this.AS.GETALL().subscribe((res)=>{this.tabArticles= res;
+  tabArticles: Article[] = [];
+  getAllData(): void {
+    this.AS.GETALL().subscribe((res) => {
+      this.tabArticles = res;
       this.dataSource = new MatTableDataSource<any>(this.tabArticles);
-    })
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+  ngOnInit(): void {
+    // this.dataSource = new MatTableDataSource<any>(this.AS.tab1);
+    this.getAllData();
   }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
@@ -40,7 +42,12 @@ export class ArticleComponent implements OnInit {
 
     dialogConfig.data = {
       id: ' ',
+      type:' ',
       titre: ' ',
+      date:' ',
+      sourcePDF:' ',
+      lien:' '
+
     };
 
     this.dialog.open(ArticleFormComponent, dialogConfig);
