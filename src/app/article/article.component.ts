@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { ArticleService } from '../article.service';
@@ -6,24 +6,29 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ArticleFormComponent } from '../article-form/article-form.component';
+import { Article } from 'src/Modeles/Article';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
 })
-export class ArticleComponent implements AfterViewInit {
+export class ArticleComponent implements OnInit {
   displayedColumns: string[] = ['1', '2', '3', '4', '5'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private AS: ArticleService, private dialog: MatDialog) {}
-
+  tabArticles:Article[]=[]
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.AS.tab1);
     this.dataSource.paginator = this.paginator;
   }
-
+  getAllData() {
+    this.AS.GETALL().subscribe((res)=>{this.tabArticles= res;
+      this.dataSource = new MatTableDataSource<any>(this.tabArticles);
+    })
+  }
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
@@ -34,8 +39,8 @@ export class ArticleComponent implements AfterViewInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
-      id: " ",
-      titre:" ",
+      id: ' ',
+      titre: ' ',
     };
 
     this.dialog.open(ArticleFormComponent, dialogConfig);
@@ -65,5 +70,4 @@ export class ArticleComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }
