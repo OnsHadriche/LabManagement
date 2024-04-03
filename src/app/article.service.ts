@@ -8,7 +8,8 @@ import { GLOBAL } from 'src/assets/app-config';
   providedIn: 'root'
 })
 export class ArticleService {
-  tab1:Article[]=[];
+  tab1:any[]=GLOBAL.DB.articles;
+  tab_article:Article[]=[];
   constructor(private httpClient:HttpClient) {}
   GETALL():Observable<Article[]>{
     return this.httpClient.get<Article[]>('http://localhost:3000/articles')
