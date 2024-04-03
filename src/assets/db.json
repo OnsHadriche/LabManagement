@@ -1,0 +1,27 @@
+{
+    "members":[
+        {"id":"1234","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"},
+        {"id":"1235","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"},
+        {"id":"1236","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"}
+
+    ],
+    "articles":[
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
+        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
+        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"}
+
+    ]
+       
+        
+}
