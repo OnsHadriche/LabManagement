@@ -32,6 +32,7 @@ import { ArticleFormComponent } from './article-form/article-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
+import { EventModalFormComponent } from './event-modal-form/event-modal-form.component';
 
 
 
@@ -49,6 +50,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     LoginComponent,
     ArticleComponent,
     ArticleFormComponent,
+    EventModalFormComponent,
   ],
   imports: [
     BrowserModule,

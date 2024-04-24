@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { EventService} from '../../Services/event-service.service';
 import { Evenement } from 'src/Modeles/Evt';
+import { EventModalFormComponent } from '../event-modal-form/event-modal-form.component';
 
 @Component({
   selector: 'app-events',
@@ -45,7 +46,7 @@ export class EventsComponent implements AfterViewInit, OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    const dialogRef = this.dialog.open(EventsComponent, dialogConfig);
+    const dialogRef = this.dialog.open(EventModalFormComponent, dialogConfig);
 
     dialogRef
       .afterClosed()
