@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { EventService } from 'src/Services/event-service.service';
 
 @Component({
   selector: 'app-event-modal-form',
@@ -9,9 +11,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EventModalFormComponent implements OnInit {
   form!: FormGroup;
-  constructor(private dialogRef: MatDialogRef<EventModalFormComponent>) {}
+  constructor(private dialogRef: MatDialogRef<EventModalFormComponent>,private ES:EventService,private router:Router) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.initForm()
   }
   //initialiser les input
   initForm(){
@@ -22,7 +24,13 @@ export class EventModalFormComponent implements OnInit {
       end: new FormControl(null, [Validators.required]),
     });
   }
-  save(): void {}
+  save(): void {
+    this.dialogRef.close(this.form.value);
+    this.ES.save(this.form.value).subscribe(()=>{
+      this.router.navigate(['/events']);
+      });
+
+  }
   close() {
     this.dialogRef.close();
   }
