@@ -1,20 +1,20 @@
 <form [formGroup]="form">
   <mat-form-field appearance="fill">
     <mat-label>type </mat-label>
-    <input matInput formControlName="type" placeholder="Input" />
+    <input matInput formControlName="titre" placeholder="Input" />
   </mat-form-field>
   <br />
   <mat-form-field appearance="fill">
     <mat-label>titre </mat-label>
-    <input matInput formControlName="titre" placeholder="Input" />
+    <input matInput formControlName="lieu" placeholder="Input" />
   </mat-form-field>
   <br />
 
   <mat-form-field>
     <mat-label>Enter a date range</mat-label>
     <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
-      <input matStartDate formControlName="start" placeholder="Start date" />
-      <input matEndDate formControlName="end" placeholder="End date" />
+      <input matStartDate formControlName="dateDebut" placeholder="Start date" />
+      <input matEndDate formControlName="datefin" placeholder="End date" />
     </mat-date-range-input>
     <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>

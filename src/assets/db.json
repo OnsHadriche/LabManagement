@@ -116,22 +116,29 @@
       "id": "125",
       "titre": "musique",
       "dateDebut": "01/02/2023",
-      "datefin":"05/03/2023",
+      "datefin": "05/03/2023",
       "lieu": "Sfax"
     },
     {
       "id": "124",
       "titre": "theatre",
       "dateDebut": "01/04/2023",
-      "datefin":"25/05/2023",
+      "datefin": "25/05/2023",
       "lieu": "Tunis"
     },
     {
       "id": "14",
       "titre": "Event Robotique",
       "dateDebut": "01/02/2023",
-      "datefin":"05/03/2023",
+      "datefin": "05/03/2023",
       "lieu": "Hammamet"
+    },
+    {
+      "id": "cf91",
+      "type": "Informatique",
+      "titre": "Tunis",
+      "start": "2024-04-17T21:00:00.000Z",
+      "end": "2024-04-23T21:00:00.000Z"
     }
   ]
 }

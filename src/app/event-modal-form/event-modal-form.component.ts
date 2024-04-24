@@ -18,10 +18,10 @@ export class EventModalFormComponent implements OnInit {
   //initialiser les input
   initForm(){
     this.form = new FormGroup({
-      type: new FormControl(null, [Validators.required]),
       titre: new FormControl(null, [Validators.required]),
-      start: new FormControl(null, [Validators.required]),
-      end: new FormControl(null, [Validators.required]),
+      lieu: new FormControl(null, [Validators.required]),
+      dateDebut: new FormControl(null, [Validators.required]),
+      datefin: new FormControl(null, [Validators.required]),
     });
   }
   save(): void {
