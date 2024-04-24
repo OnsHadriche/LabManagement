@@ -25,11 +25,11 @@
     </ng-container>
     <ng-container matColumnDef="4">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date début</th>
-      <td mat-cell *matCellDef="let element">{{ element.dateDebut }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.dateDebut | date:'M/d/yy'}}</td>
     </ng-container>
     <ng-container matColumnDef="5">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Date fin</th>
-      <td mat-cell *matCellDef="let element">{{ element.datefin }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.datefin |date :'M/d/yy' }}</td>
     </ng-container>
 
     <!-- Symbol Column -->
