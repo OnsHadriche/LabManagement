@@ -11,7 +11,7 @@ export class MemberService {
   tab:any[]=GLOBAL.DB.members;
 constructor(private httpClient:HttpClient){}
   ONSAVE(memberTosave :any):Observable<any>{
-    //generateur de requete http en mod post 
+    //generateur de requete http en mod post
    // return this.httpClient.post('127.0.0.1:8080/api/Member',memberTosave)
    const Member1={
     ...memberTosave,
@@ -43,7 +43,10 @@ getMemberById(id:string):Observable<Member>{
   return new Observable(observer=>observer.next(
     this.tab.filter(item=>item.id==id)[0] ?? null
   ))
-  
+
+}
+GETALL(): Observable<Member[]> {
+  return this.httpClient.get<Member[]>('http://localhost:3000/members');
 }
 
 }
