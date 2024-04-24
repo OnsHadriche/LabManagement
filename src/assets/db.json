@@ -1,27 +1,137 @@
 {
-    "members":[
-        {"id":"1234","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"},
-        {"id":"1235","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"},
-        {"id":"1236","cin":"124567", "name":"yesmine","type":"student","cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf","createdDate":"12/05/2015"}
-
-    ],
-    "articles":[
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"},
-        {"id":"1000","type":"aaaaa", "titre":"aaaaa","date":"01/02/2023"},
-        {"id":"1111","type":"bbbbb", "titre":"bbbbb","date":"01/05/2023"}
-
-    ]
-       
-        
+  "members": [
+    {
+      "id": "1234",
+      "cin": "124567",
+      "name": "yesmine",
+      "type": "student",
+      "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+      "createdDate": "12/05/2015"
+    },
+    {
+      "id": "1235",
+      "cin": "124567",
+      "name": "yesmine",
+      "type": "student",
+      "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+      "createdDate": "12/05/2015"
+    },
+    {
+      "id": "1236",
+      "cin": "124567",
+      "name": "yesmine",
+      "type": "student",
+      "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+      "createdDate": "12/05/2015"
+    }
+  ],
+  "articles": [
+    {
+      "type": "test",
+      "titre": "test2",
+      "date": "01/02/2023",
+      "id": "1000"
+    },
+    {
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023",
+      "id": "1111"
+    },
+    {
+      "id": "1002",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "1113",
+      "type": "bbbbkjb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    },
+    {
+      "id": "1003",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "1114",
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    },
+    {
+      "id": "1008",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "1117",
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    },
+    {
+      "id": "1011",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "1112",
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    },
+    {
+      "id": "101",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "1",
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    },
+    {
+      "id": "19",
+      "type": "aaaaa",
+      "titre": "aaaaa",
+      "date": "01/02/2023"
+    },
+    {
+      "id": "81",
+      "type": "bbbbb",
+      "titre": "bbbbb",
+      "date": "01/05/2023"
+    }
+  ],
+  "events": [
+    {
+      "id": "125",
+      "titre": "musique",
+      "dateDebut": "01/02/2023",
+      "datefin":"05/03/2023",
+      "lieu": "Sfax"
+    },
+    {
+      "id": "124",
+      "titre": "theatre",
+      "dateDebut": "01/04/2023",
+      "datefin":"25/05/2023",
+      "lieu": "Tunis"
+    },
+    {
+      "id": "14",
+      "titre": "Event Robotique",
+      "dateDebut": "01/02/2023",
+      "datefin":"05/03/2023",
+      "lieu": "Hammamet"
+    }
+  ]
 }

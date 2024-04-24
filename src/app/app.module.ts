@@ -31,6 +31,9 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleFormComponent } from './article-form/article-form.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatPaginatorModule,
     MatDatepickerModule,
     MatButtonModule,
+    MatNativeDateModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

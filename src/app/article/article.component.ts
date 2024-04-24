@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ArticleFormComponent } from '../article-form/article-form.component';
 import { Article } from 'src/Modeles/Article';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-article',
@@ -42,11 +43,36 @@ export class ArticleComponent implements AfterViewInit, OnInit {
 
     dialogConfig.data = {
       id: ' ',
-      type:' ',
+      type: ' ',
       titre: ' ',
-      date:' ',
-      sourcePDF:' ',
-      lien:' '
+      date: ' ',
+      sourcePDF: ' ',
+      lien: ' ',
+    };
+
+    this.dialog.open(ArticleFormComponent, dialogConfig);
+
+    const dialogRef = this.dialog.open(ArticleFormComponent, dialogConfig);
+
+    dialogRef
+      .afterClosed()
+      .subscribe((data) => console.log('Dialog output:', data));
+  }
+  selectedElement?:Article
+  openDialog2(element: Article):void {
+    this.selectedElement=element;
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      id: this.selectedElement.id,
+      type:this.selectedElement.type,
+      titre: this.selectedElement.titre,
+      date: this.selectedElement.date,
+      sourcePDF: this.selectedElement.sourcePDF,
+      lien: this.selectedElement.lien,
 
     };
 
@@ -58,6 +84,23 @@ export class ArticleComponent implements AfterViewInit, OnInit {
       .afterClosed()
       .subscribe((data) => console.log('Dialog output:', data));
   }
+  // openDialog2(id: string): void {
+  //   const dialogConfig = new MatDialogConfig();
+
+  //   dialogConfig.disableClose = true;
+  //   dialogConfig.autoFocus = true;
+  //   this.AS.getArticleById(id).subscribe((r) => {(dialogConfig.data = r)
+  //   console.log(r)}
+  // );
+
+  //   this.dialog.open(ArticleFormComponent, dialogConfig);
+
+  //   const dialogRef = this.dialog.open(ArticleFormComponent, dialogConfig);
+
+  //   dialogRef
+  //     .afterClosed()
+  //     .subscribe((data) => console.log('Dialog output:', data));
+  // }
 
   delete(id: string): void {
     //1 ouvrir la boite de dialogue

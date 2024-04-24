@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
-import { Member } from 'src/Modeles/Member';
+import { Component, Inject } from '@angular/core';
+import {
+  FormGroup,
+  FormBuilder,
+  FormControl,
+  Validators,
+} from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ArticleService } from '../article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-form',
@@ -10,31 +15,60 @@ import { ArticleService } from '../article.service';
   styleUrls: ['./article-form.component.css'],
 })
 export class ArticleFormComponent {
-  form!: FormGroup ;
+  form!: FormGroup;
   idcourant!: string;
+  titre!: string;
+  type!: string;
+  date!: string;
+  sourcePDF!: string;
+  lien!: string;
 
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<ArticleFormComponent>,
-    private  AS:ArticleService
-    // @Inject(MAT_DIALOG_DATA) data
+    private AS: ArticleService,
+    private router: Router,
+    @Inject(MAT_DIALOG_DATA) data: any
   ) {
-    // this.description = data.description;
+    this.idcourant = data.id
+    this.titre = data.titre;
+    this.type = data?.type;
+    this.date = data?.date;
+    this.sourcePDF = data.sourcePDF;
+    this.lien = data.lien;
+    // console.log(this.titre)
+    console.log(this.type);
+    console.log(this.date);
+    // console.log(this.sourcePDF)
+    // console.log(this.lien)
   }
-  ngOnInit():void{
+  ngOnInit(): void {
     this.initForm();
   }
-  initForm():void{
+  initForm(): void {
     this.form = new FormGroup({
-      titre: new FormControl(null, [Validators.required]),
-      type: new FormControl(null, [Validators.required]),
+      type: new FormControl(this.type, [Validators.required]),
+      titre: new FormControl(this.titre, [Validators.required]),
+      date: new FormControl(this.date, [Validators.required]),
     });
   }
   save() {
-    this.dialogRef.close(
-      this.AS.ONSAVE(this.form.value).subscribe(()=>{})
-      //redirection vers la pages article
-    );
+    // this.dialogRef.close();
+    // redirection vers la pages article
+    //this.AS.save(this.form.value).subscribe(()=>{
+    //afficher le tableau
+    this.dialogRef.close(this.form);
+    if (this.idcourant) {
+      console.log(this.idcourant)
+      this.AS.updateArticle(this.idcourant, this.form.value).subscribe(() => {
+        this.router.navigate(['/articles']);
+      });
+    } else {
+      console.log(this.idcourant)
+      this.AS.onsave(this.form).subscribe(() => {
+        this.router.navigate(['/articles']);
+      });
+    }
   }
 
   close() {
