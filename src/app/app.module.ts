@@ -33,7 +33,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventModalFormComponent } from './event-modal-form/event-modal-form.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -75,7 +75,7 @@ import { EventModalFormComponent } from './event-modal-form/event-modal-form.com
     MatDatepickerModule,
     MatButtonModule,
     MatNativeDateModule,
-
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],
