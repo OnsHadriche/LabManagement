@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,12 +8,20 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./event-modal-form.component.css'],
 })
 export class EventModalFormComponent implements OnInit {
+  form!: FormGroup;
   constructor(private dialogRef: MatDialogRef<EventModalFormComponent>) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-
-  form!: FormGroup;
+  //initialiser les input
+  initForm(){
+    this.form = new FormGroup({
+      type: new FormControl(null, [Validators.required]),
+      titre: new FormControl(null, [Validators.required]),
+      start: new FormControl(null, [Validators.required]),
+      end: new FormControl(null, [Validators.required]),
+    });
+  }
   save(): void {}
   close() {
     this.dialogRef.close();
