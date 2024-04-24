@@ -4,9 +4,44 @@
       "id": "1234",
       "cin": "124567",
       "name": "yesmine",
-      "type": "student",
+      "type": "teacher",
       "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-      "createdDate": "12/05/2015"
+      "createdDate": "12/05/2015",
+      "tab_pub" :[
+        {
+          "id": "1235",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        },
+        {
+          "id": "1236",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        }
+      ],
+      "tab_evt":[
+        {
+          "id": "cf91",
+          "type": "musique",
+          "titre": "Tunis",
+          "start": "2024-04-17T21:00:00.000Z",
+          "end": "2024-04-23T21:00:00.000Z"
+        },
+        {
+          "id": "e778",
+          "titre": "informatique",
+          "lieu": "Sfax",
+          "dateDebut": "2024-04-15T21:00:00.000Z",
+          "datefin": "2024-04-24T21:00:00.000Z"
+        }
+      ]
+
     },
     {
       "id": "1235",
@@ -14,7 +49,41 @@
       "name": "yesmine",
       "type": "student",
       "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-      "createdDate": "12/05/2015"
+      "createdDate": "12/05/2015",
+      "tab_pub" :[
+        {
+          "id": "1235",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        },
+        {
+          "id": "1236",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        }
+      ],
+      "tab_evt":[
+        {
+          "id": "cf91",
+          "type": "musique",
+          "titre": "Tunis",
+          "start": "2024-04-17T21:00:00.000Z",
+          "end": "2024-04-23T21:00:00.000Z"
+        },
+        {
+          "id": "e778",
+          "titre": "informatique",
+          "lieu": "Sfax",
+          "dateDebut": "2024-04-15T21:00:00.000Z",
+          "datefin": "2024-04-24T21:00:00.000Z"
+        }
+      ]
     },
     {
       "id": "1236",
@@ -22,7 +91,41 @@
       "name": "yesmine",
       "type": "student",
       "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-      "createdDate": "12/05/2015"
+      "createdDate": "12/05/2015",
+      "tab_pub" :[
+        {
+          "id": "1235",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        },
+        {
+          "id": "1236",
+          "cin": "124567",
+          "name": "yesmine",
+          "type": "student",
+          "cv": "https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
+          "createdDate": "12/05/2015"
+        }
+      ],
+      "tab_evt":[
+        {
+          "id": "cf91",
+          "type": "musique",
+          "titre": "Tunis",
+          "start": "2024-04-17T21:00:00.000Z",
+          "end": "2024-04-23T21:00:00.000Z"
+        },
+        {
+          "id": "e778",
+          "titre": "informatique",
+          "lieu": "Sfax",
+          "dateDebut": "2024-04-15T21:00:00.000Z",
+          "datefin": "2024-04-24T21:00:00.000Z"
+        }
+      ]
     }
   ],
   "articles": [
@@ -135,7 +238,7 @@
     },
     {
       "id": "cf91",
-      "type": "Informatique",
+      "type": "musique",
       "titre": "Tunis",
       "start": "2024-04-17T21:00:00.000Z",
       "end": "2024-04-23T21:00:00.000Z"
