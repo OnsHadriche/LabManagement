@@ -34,6 +34,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EventModalFormComponent } from './event-modal-form/event-modal-form.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { NgChartsModule} from 'ng2-charts';
 
 
 @NgModule({
@@ -75,7 +76,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatDatepickerModule,
     MatButtonModule,
     MatNativeDateModule,
-    MatGridListModule
+    MatGridListModule,
+    NgChartsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],
