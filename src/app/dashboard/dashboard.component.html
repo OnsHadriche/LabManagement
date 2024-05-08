@@ -57,6 +57,30 @@
       </canvas>
     </div>
   </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        [type]="'doughnut'"
+        [datasets]="chartDatapie"
+        [labels]="chartLabelspie"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        [type]="'polarArea'"
+        [datasets]="chartDatapie"
+        [labels]="chartLabelspie"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+  </mat-grid-tile>
 
   <mat-grid-list cols="2" rowHeight="4:2"> </mat-grid-list
 ></mat-grid-list>
