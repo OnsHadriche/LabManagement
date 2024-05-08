@@ -3,7 +3,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Members</mat-card-title>
-        <mat-card-subtitle>{{Nb_members}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ Nb_members }}</mat-card-subtitle>
       </mat-card-header>
     </mat-card>
   </mat-grid-tile>
@@ -11,7 +11,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Events</mat-card-title>
-        <mat-card-subtitle>{{Nb_events}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ Nb_events }}</mat-card-subtitle>
       </mat-card-header>
     </mat-card>
   </mat-grid-tile>
@@ -19,7 +19,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Articles</mat-card-title>
-        <mat-card-subtitle>{{Nb_articles}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ Nb_articles }}</mat-card-subtitle>
       </mat-card-header>
     </mat-card>
   </mat-grid-tile>
@@ -27,8 +27,36 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Outils</mat-card-title>
-        <mat-card-subtitle>{{Nb_outils}}</mat-card-subtitle>
+        <mat-card-subtitle>{{ Nb_outils }}</mat-card-subtitle>
       </mat-card-header>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+<mat-grid-list cols="2" rowHeight="4:2">
+  <mat-grid-tile>
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        [type]="'line'"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        [type]="'pie'"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-list cols="2" rowHeight="4:2"> </mat-grid-list
+></mat-grid-list>

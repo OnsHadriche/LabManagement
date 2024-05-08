@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/Services/event-service.service';
 import { MemberService } from 'src/Services/member.service';
 import { ArticleService } from '../article.service';
+import { ChartDataset, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,14 @@ export class DashboardComponent implements OnInit {
   Nb_events !: number;
   Nb_articles !: number;
   Nb_outils !: number;
+  chartData: ChartDataset[] = [
+    {
+      label: '$ in NombreArticle',
+      data: [ 1551, 1688, 1800, 1895, 2124, 2124 ]
+    }
+  ];
+  chartLabels: string[] = ["a","b","c","d","e","f"];
+  chartOptions: ChartOptions = {};
   constructor(private MS:MemberService,private ES:EventService,private AS:ArticleService){
 
   }
