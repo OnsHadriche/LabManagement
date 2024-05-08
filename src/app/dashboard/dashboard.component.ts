@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   Nb_events !: number;
   Nb_articles !: number;
   Nb_outils !: number;
+  nbTeacher ! : number;
   tab_article : number[] =[]
   chartData: ChartDataset[] = [
     {
@@ -21,7 +22,15 @@ export class DashboardComponent implements OnInit {
       data: this.tab_article
     }
   ];
+  chartDatapie : ChartDataset[] = [
+    {
+
+      label: '$ repartition',
+      data: []
+    }
+  ]
   chartLabels: string[] = [];
+  chartLabelspie : string []=["Teacher","Student"]
   chartOptions: ChartOptions = {};
   constructor(private MS:MemberService,private ES:EventService,private AS:ArticleService){
 
@@ -47,14 +56,15 @@ export class DashboardComponent implements OnInit {
       this.tab_article.push(el.tab_pub.length)
 
      });
+     this.chartData =[
+      {
+        label: '$ in NombreArticle',
+        data: this.tab_article
+      }
+    ];
 
     })
-    this.chartData =[
-        {
-          label: '$ in NombreArticle',
-          data: this.tab_article
-        }
-      ];
+
   }
   getEents(){
     this.MS.GETALL().subscribe((res)=>{
