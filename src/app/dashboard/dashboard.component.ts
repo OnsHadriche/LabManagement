@@ -7,69 +7,66 @@ import { ChartDataset, ChartOptions } from 'chart.js';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  Nb_members !: number;
-  Nb_events !: number;
-  Nb_articles !: number;
-  Nb_outils !: number;
-  nbTeacher ! : number;
-  tab_article : number[] =[]
+  Nb_members!: number;
+  Nb_events!: number;
+  Nb_articles!: number;
+  Nb_outils!: number;
+  nbTeacher: number = 0;
+  nbstudent: number = 0;
+  tab_article: number[] = [];
   chartData: ChartDataset[] = [
     {
       label: '$ in NombreArticle',
-      data: this.tab_article
-    }
+      data: this.tab_article,
+    },
   ];
-  chartDatapie : ChartDataset[] = [
+  chartDatapie: ChartDataset[] = [
     {
-
       label: '$ repartition',
-      data: []
-    }
-  ]
+      data: [],
+    },
+  ];
   chartLabels: string[] = [];
-  chartLabelspie : string []=["Teacher","Student"]
+  chartLabelspie: string[] = ['Teacher', 'Student'];
   chartOptions: ChartOptions = {};
-  constructor(private MS:MemberService,private ES:EventService,private AS:ArticleService){
-
-  }
+  constructor(
+    private MS: MemberService,
+    private ES: EventService,
+    private AS: ArticleService
+  ) {}
   ngOnInit(): void {
     this.getMembers();
     this.getArticles();
     this.getEents();
   }
-  getArticles(){
-
-    this.AS.GETALL().subscribe((res)=>{
-      this.Nb_articles = res.length
-
-
-    })
+  getArticles() {
+    this.AS.GETALL().subscribe((res) => {
+      this.Nb_articles = res.length;
+    });
   }
-  getMembers(){
-    this.MS.GETALL().subscribe((res)=>{
-      this.Nb_members = res.length
-     res.forEach(el => {
-      this.chartLabels.push(el.name)
-      this.tab_article.push(el.tab_pub.length)
-
-     });
-     this.chartData =[
-      {
-        label: '$ in NombreArticle',
-        data: this.tab_article
-      }
-    ];
-
-    })
-
+  getMembers() {
+    this.MS.GETALL().subscribe((res) => {
+      this.Nb_members = res.length;
+      res.forEach((el) => {
+        this.chartLabels.push(el.name);
+        this.tab_article.push(el.tab_pub.length);
+        el.type == 'teacher' ? this.nbTeacher++ : this.nbstudent++;
+      });
+      this.chartDatapie = [{ label: '$ repartition', data: [this.nbTeacher,this.nbstudent] }];
+      this.chartData = [
+        {
+          label: '$ in NombreArticle',
+          data: this.tab_article,
+        },
+      ];
+    });
   }
-  getEents(){
-    this.MS.GETALL().subscribe((res)=>{
-      this.Nb_events = res.length
-    })
+  getEents() {
+    this.MS.GETALL().subscribe((res) => {
+      this.Nb_events = res.length;
+    });
   }
-
 }
