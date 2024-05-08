@@ -17,10 +17,10 @@ export class DashboardComponent implements OnInit {
   chartData: ChartDataset[] = [
     {
       label: '$ in NombreArticle',
-      data: [ 1551, 1688, 1800, 1895, 2124, 2124 ]
+      data: [ 1551, 1688, 1800 ]
     }
   ];
-  chartLabels: string[] = ["a","b","c","d","e","f"];
+  chartLabels: string[] = [];
   chartOptions: ChartOptions = {};
   constructor(private MS:MemberService,private ES:EventService,private AS:ArticleService){
 
@@ -34,11 +34,17 @@ export class DashboardComponent implements OnInit {
 
     this.AS.GETALL().subscribe((res)=>{
       this.Nb_articles = res.length
+
+
     })
   }
   getMembers(){
     this.MS.GETALL().subscribe((res)=>{
       this.Nb_members = res.length
+     res.forEach(el => {
+      this.chartLabels.push(el.name)
+
+     });
     })
   }
   getEents(){
