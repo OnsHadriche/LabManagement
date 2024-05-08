@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   nbTeacher: number = 0;
   nbstudent: number = 0;
   tab_article: number[] = [];
+  tab_event : number [] = []
   chartData: ChartDataset[] = [
     {
       label: '$ in NombreArticle',
@@ -29,7 +30,14 @@ export class DashboardComponent implements OnInit {
       data: [],
     },
   ];
+  chartDatabar: ChartDataset[] = [
+    {
+      label: '$ Nombre Events',
+      data: [],
+    },
+  ];
   chartLabels: string[] = [];
+  chartLabelsbar: string[] = [];
   chartLabelspie: string[] = ['Teacher', 'Student'];
   chartOptions: ChartOptions = {};
   constructor(
@@ -53,13 +61,27 @@ export class DashboardComponent implements OnInit {
       res.forEach((el) => {
         this.chartLabels.push(el.name);
         this.tab_article.push(el.tab_pub.length);
-        el.type == 'teacher' ? this.nbTeacher++ : this.nbstudent++;
+        if (el.type == 'teacher') {
+          this.nbTeacher++;
+        } else {
+          this.nbstudent++;
+          this.chartLabelsbar.push(el.name);
+          this.tab_event.push(el.tab_evt.length);
+        }
       });
-      this.chartDatapie = [{ label: '$ repartition', data: [this.nbTeacher,this.nbstudent] }];
+      this.chartDatapie = [
+        { label: '$ repartition', data: [this.nbTeacher, this.nbstudent] },
+      ];
       this.chartData = [
         {
           label: '$ in NombreArticle',
           data: this.tab_article,
+        },
+      ];
+      this.chartDatabar = [
+        {
+          label: '$ $ Nombre Events',
+          data: this.tab_event,
         },
       ];
     });

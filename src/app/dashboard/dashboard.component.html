@@ -81,6 +81,17 @@
       </canvas>
     </div>
   </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="chart-wrapper">
+      <canvas
+        baseChart
+        [type]="'bar'"
+        [datasets]="chartDatabar"
+        [labels]="chartLabelsbar"
+        [options]="chartOptions"
+      >
+      </canvas>
+    </div>
+  </mat-grid-tile>
 
-  <mat-grid-list cols="2" rowHeight="4:2"> </mat-grid-list
 ></mat-grid-list>
