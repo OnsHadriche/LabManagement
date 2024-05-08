@@ -14,10 +14,11 @@ export class DashboardComponent implements OnInit {
   Nb_events !: number;
   Nb_articles !: number;
   Nb_outils !: number;
+  tab_article : number[] =[]
   chartData: ChartDataset[] = [
     {
       label: '$ in NombreArticle',
-      data: [ 1551, 1688, 1800 ]
+      data: this.tab_article
     }
   ];
   chartLabels: string[] = [];
@@ -43,9 +44,17 @@ export class DashboardComponent implements OnInit {
       this.Nb_members = res.length
      res.forEach(el => {
       this.chartLabels.push(el.name)
+      this.tab_article.push(el.tab_pub.length)
 
      });
+
     })
+    this.chartData =[
+        {
+          label: '$ in NombreArticle',
+          data: this.tab_article
+        }
+      ];
   }
   getEents(){
     this.MS.GETALL().subscribe((res)=>{
